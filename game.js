@@ -16,8 +16,11 @@ document.body.appendChild(renderer.domElement);
 
 const ground = new THREE.Mesh(
     new THREE.PlaneGeometry(200, 200),
-    new THREE.MeshStandardMaterial({ color: 0x228B22 })
+    new THREE.MeshStandardMaterial({ color: 0x555555 })
 );
+
+const grid = new THREE.GridHelper(200, 50);
+scene.add(grid);
 
 ground.rotation.x = -Math.PI / 2;
 scene.add(ground);
