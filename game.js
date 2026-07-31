@@ -37,10 +37,13 @@ scene.add(light);
 const ambient = new THREE.AmbientLight(0xffffff, 1);
 scene.add(ambient);
 
-camera.position.set(0, 5, 8);
-camera.lookAt(player.position);
+camera.position.set(0, 8, 12);
+camera.lookAt(0,0,0);
 function animate() {
     requestAnimationFrame(animate);
+
+    camera.lookAt(player.position);
+
     renderer.render(scene, camera);
 }
 
