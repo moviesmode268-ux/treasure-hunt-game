@@ -144,7 +144,10 @@ if(window.moveLeft){
 if(window.moveRight){
     player.position.x += 0.1;
 }
-
+console.log(
+ player.position.x,
+ player.position.z
+);
 
     camera.position.x = player.position.x;
 camera.position.y = player.position.y + 6;
