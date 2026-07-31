@@ -39,7 +39,6 @@ scene.add(ambient);
 
 camera.position.set(0, 5, 8);
 camera.lookAt(player.position);
-
 function animate() {
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
