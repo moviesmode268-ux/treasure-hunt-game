@@ -44,7 +44,10 @@ function animate() {
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
 }
+
 const loading = document.getElementById("loading");
-if(loading){
+if (loading) {
     loading.style.display = "none";
 }
+
+animate();
