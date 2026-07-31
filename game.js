@@ -110,10 +110,10 @@ function animate(){
 
 
     camera.position.x = player.position.x;
-    camera.position.z = player.position.z + 10;
-camera.position.y = player.position.y + 5;
-camera.position.z = player.position.z + 10;
-    camera.lookAt(player.position);
+camera.position.y = player.position.y + 6;
+camera.position.z = player.position.z + 12;
+
+camera.lookAt(player.position);
 
 
     renderer.render(scene,camera);
