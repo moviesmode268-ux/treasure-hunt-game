@@ -44,5 +44,5 @@ function animate() {
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
 }
-
+document.getElementById("loading").style.display = "none";
 animate();
