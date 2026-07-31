@@ -19,11 +19,12 @@ const ground = new THREE.Mesh(
     new THREE.MeshStandardMaterial({ color: 0x555555 })
 );
 
-const grid = new THREE.GridHelper(200, 50);
-scene.add(grid);
 
 ground.rotation.x = -Math.PI / 2;
 scene.add(ground);
+
+const grid = new THREE.GridHelper(200, 50);
+scene.add(grid);
 
 const player = new THREE.Mesh(
     new THREE.BoxGeometry(1, 2, 1),
