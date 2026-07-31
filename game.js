@@ -39,17 +39,85 @@ scene.add(ambient);
 
 camera.position.set(0, 8, 12);
 camera.lookAt(0,0,0);
-function animate() {
+let moveForward = false;
+let moveBackward = false;
+let moveLeft = false;
+let moveRight = false;
+
+
+document.addEventListener("keydown", (event)=>{
+
+    if(event.key === "w"){
+        moveForward = true;
+    }
+
+    if(event.key === "s"){
+        moveBackward = true;
+    }
+
+    if(event.key === "a"){
+        moveLeft = true;
+    }
+
+    if(event.key === "d"){
+        moveRight = true;
+    }
+
+});
+
+
+document.addEventListener("keyup", (event)=>{
+
+    if(event.key === "w"){
+        moveForward = false;
+    }
+
+    if(event.key === "s"){
+        moveBackward = false;
+    }
+
+    if(event.key === "a"){
+        moveLeft = false;
+    }
+
+    if(event.key === "d"){
+        moveRight = false;
+    }
+
+});
+
+
+function animate(){
+
     requestAnimationFrame(animate);
+
+
+    if(moveForward){
+        player.position.z -= 0.1;
+    }
+
+    if(moveBackward){
+        player.position.z += 0.1;
+    }
+
+    if(moveLeft){
+        player.position.x -= 0.1;
+    }
+
+    if(moveRight){
+        player.position.x += 0.1;
+    }
+
+
+    camera.position.x = player.position.x;
+    camera.position.z = player.position.z + 10;
 
     camera.lookAt(player.position);
 
-    renderer.render(scene, camera);
+
+    renderer.render(scene,camera);
+
 }
 
-const loading = document.getElementById("loading");
-if (loading) {
-    loading.style.display = "none";
-}
 
 animate();
