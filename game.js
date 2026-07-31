@@ -43,7 +43,10 @@ let moveForward = false;
 let moveBackward = false;
 let moveLeft = false;
 let moveRight = false;
-
+window.moveForward = false;
+window.moveBackward = false;
+window.moveLeft = false;
+window.moveRight = false;
 
 document.addEventListener("keydown", (event)=>{
 
@@ -92,21 +95,21 @@ function animate(){
     requestAnimationFrame(animate);
 
 
-    if(moveForward){
-        player.position.z -= 0.1;
-    }
+if(window.moveForward){
+    player.position.z -= 0.1;
+}
 
-    if(moveBackward){
-        player.position.z += 0.1;
-    }
+if(window.moveBackward){
+    player.position.z += 0.1;
+}
 
-    if(moveLeft){
-        player.position.x -= 0.1;
-    }
+if(window.moveLeft){
+    player.position.x -= 0.1;
+}
 
-    if(moveRight){
-        player.position.x += 0.1;
-    }
+if(window.moveRight){
+    player.position.x += 0.1;
+}
 
 
     camera.position.x = player.position.x;
