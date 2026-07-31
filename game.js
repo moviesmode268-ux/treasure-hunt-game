@@ -43,11 +43,41 @@ let moveForward = false;
 let moveBackward = false;
 let moveLeft = false;
 let moveRight = false;
-window.moveForward = false;
-window.moveBackward = false;
-window.moveLeft = false;
-window.moveRight = false;
+window.moveForward = moveForward;
+window.moveBackward = moveBackward;
+window.moveLeft = moveLeft;
+window.moveRight = moveRight;
+window.moveForward = () => {
+    moveForward = true;
+};
 
+window.stopForward = () => {
+    moveForward = false;
+};
+
+window.moveBackward = () => {
+    moveBackward = true;
+};
+
+window.stopBackward = () => {
+    moveBackward = false;
+};
+
+window.moveLeft = () => {
+    moveLeft = true;
+};
+
+window.stopLeft = () => {
+    moveLeft = false;
+};
+
+window.moveRight = () => {
+    moveRight = true;
+};
+
+window.stopRight = () => {
+    moveRight = false;
+};
 document.addEventListener("keydown", (event)=>{
 
     if(event.key === "w"){
